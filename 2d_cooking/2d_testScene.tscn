@@ -1,0 +1,77 @@
+[gd_scene load_steps=3 format=3 uid="uid://d816lp5gbct8"]
+
+[ext_resource type="Script" path="res://2d_cooking/ui.gd" id="1_dhqwp"]
+[ext_resource type="PackedScene" uid="uid://c114jo5authca" path="res://2d_cooking/slot.tscn" id="2_m83rc"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dhqwp")
+
+[node name="Result" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 365.0
+offset_right = 730.0
+offset_bottom = 388.0
+
+[node name="Ingredients" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_left = 382.0
+offset_top = 94.0
+offset_right = 690.0
+offset_bottom = 154.0
+columns = 3
+
+[node name="slot" parent="UI/Ingredients" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="ingredient" parent="UI/Ingredients/slot" index="0"]
+text = "Bottom Bun"
+
+[node name="slot2" parent="UI/Ingredients" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="ingredient" parent="UI/Ingredients/slot2" index="0"]
+text = "Meat"
+
+[node name="slot3" parent="UI/Ingredients" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="ingredient" parent="UI/Ingredients/slot3" index="0"]
+text = "Top Bun"
+
+[node name="Food" type="GridContainer" parent="UI"]
+layout_mode = 0
+offset_left = 485.0
+offset_top = 276.0
+offset_right = 585.0
+offset_bottom = 464.0
+
+[node name="top" parent="UI/Food" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="middle" parent="UI/Food" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="bottom" parent="UI/Food" instance=ExtResource("2_m83rc")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="UI"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 770.0
+offset_top = 226.0
+offset_right = 870.0
+offset_bottom = 326.0
+text = "Deliver"
+
+[connection signal="pressed" from="UI/Button" to="UI" method="_on_delivery_button_pressed"]
+
+[editable path="UI/Ingredients/slot"]
+[editable path="UI/Ingredients/slot2"]
+[editable path="UI/Ingredients/slot3"]

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://qf2sbl0unhh1"]
+
+[ext_resource type="Script" path="res://3d_cooking/3d_main.gd" id="1_2piyb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00uhs"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_xcrrv"]
+sky_material = SubResource("ProceduralSkyMaterial_00uhs")
+
+[sub_resource type="Environment" id="Environment_uysxm"]
+background_mode = 2
+sky = SubResource("Sky_xcrrv")
+tonemap_mode = 2
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wje0b"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1bt6d"]
+size = Vector2(10, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y30c3"]
+albedo_color = Color(0.31, 0.31, 0.31, 1)
+
+[node name="3dTestScene" type="Node3D"]
+script = ExtResource("1_2piyb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uysxm")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_wje0b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_1bt6d")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_y30c3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.2, 0)
+use_collision = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.427168, 0.904172, 0, -0.904172, 0.427168, 0, 9.33922, 4.44166)
