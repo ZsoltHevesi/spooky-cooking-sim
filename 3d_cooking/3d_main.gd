@@ -13,8 +13,10 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		mouse = event.position
 	if event is InputEventMouseButton:
+		# Mouse pressed
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			grabbed_object = get_grabbed_object(mouse)
+		# Mouse released
 		elif not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			grabbed_object = null
 
@@ -30,6 +32,7 @@ func get_grabbed_object(mouse: Vector2):
 	
 	if result.is_empty() == false:
 		return result.collider
+	
 	return null
 
 func get_grab_position():
@@ -38,4 +41,5 @@ func get_grab_position():
 	var distance = (FIXED_Y - start.y) / direction.y
 	var pos = start + direction * distance
 	pos.y = FIXED_Y  # Lock the Y position
+	
 	return pos
