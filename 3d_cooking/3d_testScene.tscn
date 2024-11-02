@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://qf2sbl0unhh1"]
+[gd_scene load_steps=9 format=3 uid="uid://qf2sbl0unhh1"]
 
 [ext_resource type="Script" path="res://3d_cooking/3d_main.gd" id="1_2piyb"]
+[ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://3d_cooking/burger_top_bun.tscn" id="2_lbc5o"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_00uhs"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,4 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3, 1.2, 0)
 use_collision = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.427168, 0.904172, 0, -0.904172, 0.427168, 0, 9.33922, 4.44166)
+transform = Transform3D(1, 0, 0, 0, 0.846927, 0.531709, 0, -0.531709, 0.846927, 0, 5.94988, 6.53344)
+
+[node name="BurgerTopBun" parent="." instance=ExtResource("2_lbc5o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.1, 0)
