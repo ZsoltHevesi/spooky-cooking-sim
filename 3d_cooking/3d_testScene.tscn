@@ -52,4 +52,4 @@ use_collision = true
 transform = Transform3D(1, 0, 0, 0, 0.846927, 0.531709, 0, -0.531709, 0.846927, 0, 5.94988, 6.53344)
 
 [node name="BurgerTopBun" parent="." instance=ExtResource("2_lbc5o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

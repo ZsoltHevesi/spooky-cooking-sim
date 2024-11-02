@@ -5,6 +5,7 @@ var Zpos = 8
 var mouse = Vector2()
 var grab_position = Vector2()
 const DIST = 1000
+const FIXED_Y = 0  # Set this to the desired Y position
 
 func _process(delta: float) -> void:
 	if grabbed_object:
@@ -33,4 +34,6 @@ func get_mouse_world_pos(mouse:Vector2):
 		grabbed_object = result.collider
 
 func get_grab_position():
-	return get_viewport().get_camera_3d().project_position(mouse, Zpos)
+	var pos = get_viewport().get_camera_3d().project_position(mouse, Zpos)
+	pos.y = FIXED_Y  # Lock the Y position
+	return pos
