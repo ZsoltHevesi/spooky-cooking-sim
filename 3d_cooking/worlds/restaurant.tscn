@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlfrjnwd65y4m"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tbb2x"]
+size = Vector2(40, 40)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4f7sr"]
+frequency = 0.02
+metadata/_preview_in_3d_space_ = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pfhvk"]
+noise = SubResource("FastNoiseLite_4f7sr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5fmqy"]
+albedo_color = Color(0.312466, 0.312466, 0.312466, 1)
+albedo_texture = SubResource("NoiseTexture2D_pfhvk")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5lg2l"]
+data = PackedVector3Array(20, 0, 20, -20, 0, 20, 20, 0, -20, -20, 0, 20, -20, 0, -20, 20, 0, -20)
+
+[node name="world" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_tbb2x")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5fmqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_5lg2l")
