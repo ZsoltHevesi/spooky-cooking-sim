@@ -1,6 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlfrjnwd65y4m"]
+[gd_scene load_steps=15 format=3 uid="uid://dlfrjnwd65y4m"]
 
 [ext_resource type="PackedScene" uid="uid://i0wpxhmxkq6p" path="res://player/player.tscn" id="1_3xlh7"]
+[ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://3d_cooking/burger_top_bun.tscn" id="1_hfn3w"]
+[ext_resource type="Script" path="res://3d_cooking/worlds/stove_prototype.gd" id="2_gwrtu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80w24"]
 sky_top_color = Color(4.33177e-06, 0.483109, 0.689181, 1)
@@ -33,14 +35,25 @@ albedo_texture = SubResource("NoiseTexture2D_pfhvk")
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_5lg2l"]
 data = PackedVector3Array(20, 0, 20, -20, 0, 20, 20, 0, -20, -20, 0, 20, -20, 0, -20, 20, 0, -20)
 
+[sub_resource type="BoxMesh" id="BoxMesh_1dita"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox0yi"]
+albedo_color = Color(0.440979, 0.440979, 0.440979, 1)
+metallic = 1.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_gjy78"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
 [node name="world" type="Node3D"]
+
+[node name="BurgerTopBun" parent="." instance=ExtResource("1_hfn3w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r8jb6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
-light_color = Color(0.352941, 1, 1, 1)
 shadow_enabled = true
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_3xlh7")]
@@ -53,3 +66,16 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5fmqy")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5lg2l")
+
+[node name="stove_prototype" type="MeshInstance3D" parent="." groups=["stove"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -5)
+mesh = SubResource("BoxMesh_1dita")
+surface_material_override/0 = SubResource("StandardMaterial3D_ox0yi")
+script = ExtResource("2_gwrtu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="stove_prototype"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="stove_prototype/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_gjy78")
