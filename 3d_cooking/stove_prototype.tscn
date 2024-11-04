@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkvtpsehkkh4g"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_1dita"]
+[ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ox0yi"]
 albedo_color = Color(0.440979, 0.440979, 0.440979, 1)
@@ -10,11 +10,12 @@ metallic = 1.0
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [node name="stove_prototype" type="MeshInstance3D" groups=["stove"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-mesh = SubResource("BoxMesh_1dita")
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.5, 0)
+mesh = ExtResource("1_r1tfd")
 surface_material_override/0 = SubResource("StandardMaterial3D_ox0yi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 collision_layer = 3
 collision_mask = 3
 
@@ -22,4 +23,4 @@ collision_mask = 3
 shape = SubResource("ConcavePolygonShape3D_gjy78")
 
 [node name="CameraAnchor" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.86845, 0.495777, 0, -0.495777, 0.86845, 0, 1.76309, 1.78271)
+transform = Transform3D(-4.37114e-08, 0.495459, -0.868632, 0, 0.868632, 0.495459, 1, 2.16572e-08, -3.79691e-08, -1.783, 1.763, 0)
