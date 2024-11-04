@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bngvw3p5taqux"
+path="res://.godot/imported/spookjam_meat_pile_red.obj-a8932ef3d4ad1d7ab3f7cfd4dceb0e82.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spookjam_meat_pile_red.obj-a8932ef3d4ad1d7ab3f7cfd4dceb0e82.mesh"]
+
+source_file="res://_Assets/Objects/spookjam_meat_pile_red.obj"
+dest_files=["res://.godot/imported/spookjam_meat_pile_red.obj-a8932ef3d4ad1d7ab3f7cfd4dceb0e82.mesh", "res://.godot/imported/spookjam_meat_pile_red.obj-a8932ef3d4ad1d7ab3f7cfd4dceb0e82.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

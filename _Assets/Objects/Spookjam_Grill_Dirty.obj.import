@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://g5d0whlwdfxj"
+path="res://.godot/imported/Spookjam_Grill_Dirty.obj-d358e760dc3649939bfcfa344df5569a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Spookjam_Grill_Dirty.obj-d358e760dc3649939bfcfa344df5569a.mesh"]
+
+source_file="res://_Assets/Objects/Spookjam_Grill_Dirty.obj"
+dest_files=["res://.godot/imported/Spookjam_Grill_Dirty.obj-d358e760dc3649939bfcfa344df5569a.mesh", "res://.godot/imported/Spookjam_Grill_Dirty.obj-d358e760dc3649939bfcfa344df5569a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
