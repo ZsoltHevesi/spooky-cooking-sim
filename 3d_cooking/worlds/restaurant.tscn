@@ -59,3 +59,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_5fmqy")
 shape = SubResource("ConcavePolygonShape3D_5lg2l")
 
 [node name="stove_prototype" parent="." instance=ExtResource("3_jr16j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -6.86192)
