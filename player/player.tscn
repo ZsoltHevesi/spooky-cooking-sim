@@ -8,7 +8,7 @@
 radius = 0.3
 height = 1.5
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
+[node name="player" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 collision_layer = 2
 collision_mask = 5
@@ -26,6 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 [node name="Camera3D" type="Camera3D" parent="camera_node"]
 
 [node name="interaction_raycast" type="RayCast3D" parent="camera_node/Camera3D"]
-target_position = Vector3(0, 0, -10)
-collision_mask = 2
+target_position = Vector3(0, 0, -4)
+collision_mask = 4
 script = ExtResource("3_tkynn")

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkvtpsehkkh4g"]
 
+[ext_resource type="Script" path="res://_Scripts/interactible.gd" id="1_oogef"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 [ext_resource type="Texture2D" uid="uid://pnw6ihra53u1" path="res://_Assets/Objects/Spookjam_Grill_clean.png" id="1_vs0ia"]
-[ext_resource type="Script" path="res://_Scenes/stove.gd" id="3_43lh2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qax8x"]
 cull_mode = 2
@@ -12,16 +12,17 @@ texture_filter = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtq5t"]
 size = Vector3(1, 0.5, 1)
 
-[node name="stove" type="MeshInstance3D"]
+[node name="stove" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_oogef")
+reticle_text = "Stove"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
 material_override = SubResource("StandardMaterial3D_qax8x")
 mesh = ExtResource("1_r1tfd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["stove"]]
-collision_layer = 4
-collision_mask = 7
-script = ExtResource("3_43lh2")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_jtq5t")
