@@ -10,7 +10,8 @@ height = 1.5
 
 [node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("CAMERA_CONTROLLER")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
-collision_mask = 3
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_xr0jd")
 CAMERA_CONTROLLER = NodePath("camera_node/Camera3D")
 

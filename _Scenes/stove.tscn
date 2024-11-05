@@ -18,8 +18,8 @@ material_override = SubResource("StandardMaterial3D_qax8x")
 mesh = ExtResource("1_r1tfd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["stove"]]
-collision_layer = 2
-collision_mask = 3
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("3_43lh2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
