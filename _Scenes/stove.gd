@@ -5,5 +5,6 @@ extends Interactible
 
 func _on_interacted(body: Variant) -> void:
 	camera_3d.current = true
-	Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_node("../player").hud.visible = false
+	
