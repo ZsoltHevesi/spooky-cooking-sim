@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dkvtpsehkkh4g"]
 
-[ext_resource type="Script" path="res://_Scripts/interactible.gd" id="1_oogef"]
+[ext_resource type="Script" path="res://_Scenes/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 [ext_resource type="Texture2D" uid="uid://pnw6ihra53u1" path="res://_Assets/Objects/Spookjam_Grill_clean.png" id="1_vs0ia"]
 
@@ -15,8 +15,8 @@ size = Vector3(1, 0.5, 1)
 [node name="stove" type="StaticBody3D"]
 collision_layer = 4
 collision_mask = 7
-script = ExtResource("1_oogef")
-reticle_text = "Stove"
+script = ExtResource("1_6tf2b")
+reticle_input = "interact"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
@@ -26,3 +26,8 @@ mesh = ExtResource("1_r1tfd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_jtq5t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -0.75, 1, 0)
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
