@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends StaticBody3D
 
 var grabbed_object = null
 var mouse = Vector2()
