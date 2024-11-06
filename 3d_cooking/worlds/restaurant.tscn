@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlfrjnwd65y4m"]
+[gd_scene load_steps=15 format=3 uid="uid://dlfrjnwd65y4m"]
 
 [ext_resource type="PackedScene" uid="uid://i0wpxhmxkq6p" path="res://player/player.tscn" id="1_3xlh7"]
-[ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://_Scenes/burger_top_bun.tscn" id="1_hfn3w"]
 [ext_resource type="PackedScene" uid="uid://dkvtpsehkkh4g" path="res://_Scenes/stove.tscn" id="5_emdev"]
 [ext_resource type="Texture2D" uid="uid://da1ialtmpd7ys" path="res://_Assets/Objects/spookjam_meat_red.png" id="5_tu4q5"]
 [ext_resource type="ArrayMesh" uid="uid://bngvw3p5taqux" path="res://_Assets/Objects/spookjam_meat_pile_red.obj" id="6_2pidn"]
@@ -44,11 +43,6 @@ metallic_specular = 0.0
 texture_filter = 0
 
 [node name="world" type="Node3D"]
-
-[node name="BurgerTopBun" parent="." instance=ExtResource("1_hfn3w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42162, 0.935402, -4.10153)
-collision_layer = 4
-collision_mask = 7
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_r8jb6")

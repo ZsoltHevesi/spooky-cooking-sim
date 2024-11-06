@@ -30,4 +30,28 @@ shape = SubResource("BoxShape3D_jtq5t")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -0.75, 1, 0)
 
+[node name="stove_menu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Button" type="Button" parent="stove_menu"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Place Top Bun"
+
 [connection signal="interacted" from="." to="." method="_on_interacted"]
+[connection signal="pressed" from="stove_menu/Button" to="." method="_on_button_pressed"]
