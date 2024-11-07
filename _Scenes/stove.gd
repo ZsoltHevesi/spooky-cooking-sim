@@ -20,6 +20,7 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		get_node("../player").hud.visible = true
 		set_physics_process(false)
+		is_in_use = false
 	if event is InputEventMouseMotion:
 		mouse = event.position
 	if event is InputEventMouseButton:
