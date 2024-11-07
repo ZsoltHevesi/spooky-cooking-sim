@@ -13,7 +13,6 @@ func _on_interacted(body: Variant) -> void:
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("LMB"):
 		get_node("../player").set_physics_process(true)
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		get_node("../player").hud.get_node("reticle").visible = true
 		get_node("../player").hud.get_node("reticle_text").visible = true
 		get_node("../player").hud.get_node("dialog_margin").visible = false

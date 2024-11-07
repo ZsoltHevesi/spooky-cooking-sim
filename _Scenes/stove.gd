@@ -41,9 +41,8 @@ func _on_interacted(body: Variant) -> void:
 		is_in_use = true
 		set_physics_process(true)
 
-func _physics_process(delta: float) -> void:
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	if grabbed_object:
+func _process(delta: float) -> void:
+	if grabbed_object and grabbed_object.is_in_group("grabbable"):
 		grabbed_object.position = get_grab_position()
 	#top_bun_instance = top_bun.instantiate()
 	#top_bun_instance.position = stove.position

@@ -24,6 +24,10 @@ window/size/viewport_height=1080
 
 project/assembly_name="Spooky Cooking Sim"
 
+[global_group]
+
+grabbable="can be grabbed"
+
 [input]
 
 move_forward={
