@@ -19,6 +19,7 @@ func _input(event: InputEvent) -> void:
 		camera_3d.current = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		get_node("../player").hud.visible = true
+		get_node("../player").set_physics_process(true)
 		set_physics_process(false)
 		is_in_use = false
 	if event is InputEventMouseMotion:
@@ -36,6 +37,7 @@ func _on_interacted(body: Variant) -> void:
 		camera_3d.current = true
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		get_node("../player").hud.visible = false
+		get_node("../player").set_physics_process(false)
 		is_in_use = true
 		set_physics_process(true)
 
