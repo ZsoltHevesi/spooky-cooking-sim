@@ -22,6 +22,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_hncki")
 
 [node name="reticle_text" type="Label" parent="."]
@@ -50,7 +51,7 @@ offset_top = 310.0
 offset_bottom = 438.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 0
+mouse_filter = 2
 
 [node name="dialog_box" type="VBoxContainer" parent="dialog_margin"]
 custom_minimum_size = Vector2(1000, 300)
