@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkvtpsehkkh4g"]
+[gd_scene load_steps=7 format=3 uid="uid://dkvtpsehkkh4g"]
 
 [ext_resource type="Script" path="res://_Scenes/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
@@ -10,7 +10,10 @@ albedo_texture = ExtResource("1_vs0ia")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtq5t"]
-size = Vector3(1, 0.5, 1)
+size = Vector3(1, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_51fhe"]
+size = Vector3(0.4, 0.175488, 0.4)
 
 [node name="stove" type="StaticBody3D"]
 collision_layer = 4
@@ -23,11 +26,30 @@ layers = 2
 material_override = SubResource("StandardMaterial3D_qax8x")
 mesh = ExtResource("1_r1tfd")
 
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1)
+layers = 2
+material_override = SubResource("StandardMaterial3D_qax8x")
+mesh = ExtResource("1_r1tfd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -1)
+layers = 2
+material_override = SubResource("StandardMaterial3D_qax8x")
+mesh = ExtResource("1_r1tfd")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.5)
 shape = SubResource("BoxShape3D_jtq5t")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -0.75, 1, 0)
+transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -1.15, 1.2, 0)
+
+[node name="BurgerConstructor" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501478, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BurgerConstructor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0867676, 0)
+shape = SubResource("BoxShape3D_51fhe")
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]

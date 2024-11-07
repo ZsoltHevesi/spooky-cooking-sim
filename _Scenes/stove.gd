@@ -8,8 +8,8 @@ var grabbed_object = null
 var mouse = Vector2()
 const DIST = 1000
 const FIXED_Y = 0.65
-var top_bun = load("res://_Scenes/burger_top_bun.tscn")
-var top_bun_instance
+#var top_bun = load("res://_Scenes/burger_top_bun.tscn")
+#var top_bun_instance
 
 func _ready() -> void:
 	set_physics_process(false)
