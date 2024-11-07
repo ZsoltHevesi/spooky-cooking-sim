@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dlfrjnwd65y4m"]
+[gd_scene load_steps=16 format=3 uid="uid://dlfrjnwd65y4m"]
 
 [ext_resource type="PackedScene" uid="uid://i0wpxhmxkq6p" path="res://player/player.tscn" id="1_3xlh7"]
 [ext_resource type="PackedScene" uid="uid://dkvtpsehkkh4g" path="res://_Scenes/stove.tscn" id="5_emdev"]
 [ext_resource type="Texture2D" uid="uid://da1ialtmpd7ys" path="res://_Assets/Objects/spookjam_meat_red.png" id="5_tu4q5"]
 [ext_resource type="ArrayMesh" uid="uid://bngvw3p5taqux" path="res://_Assets/Objects/spookjam_meat_pile_red.obj" id="6_2pidn"]
+[ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://_Scenes/burger_top_bun.tscn" id="6_8yb5e"]
 [ext_resource type="PackedScene" uid="uid://ds310i3gdkayf" path="res://customers/customer.tscn" id="6_xdh2k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80w24"]
@@ -69,7 +70,10 @@ mesh = ExtResource("6_2pidn")
 [node name="customer" parent="." instance=ExtResource("6_xdh2k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
 
+[node name="player" parent="." instance=ExtResource("1_3xlh7")]
+
 [node name="stove" parent="." instance=ExtResource("5_emdev")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -4)
 
-[node name="player" parent="." instance=ExtResource("1_3xlh7")]
+[node name="BurgerTopBun" parent="." instance=ExtResource("6_8yb5e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -4)
