@@ -1,8 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkvtpsehkkh4g"]
+[gd_scene load_steps=16 format=3 uid="uid://dkvtpsehkkh4g"]
 
 [ext_resource type="Script" path="res://_Scenes/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 [ext_resource type="Texture2D" uid="uid://pnw6ihra53u1" path="res://_Assets/Objects/Spookjam_Grill_clean.png" id="1_vs0ia"]
+[ext_resource type="Texture2D" uid="uid://djqqovjck1ob3" path="res://_Assets/Objects/Spookjam_Grill_Dirty.png" id="2_5trsd"]
+[ext_resource type="ArrayMesh" uid="uid://g5d0whlwdfxj" path="res://_Assets/Objects/Spookjam_Grill_Dirty.obj" id="3_kv8ob"]
+[ext_resource type="Texture2D" uid="uid://d2a2wgf88xctc" path="res://_Assets/Objects/spatula_dirty.png" id="6_vsjvt"]
+[ext_resource type="ArrayMesh" uid="uid://ffyipym6ngmt" path="res://_Assets/Objects/spookjam_spatula_dirty.obj" id="7_xdkmo"]
+[ext_resource type="Texture2D" uid="uid://cmqhcg888v5h0" path="res://_Assets/Objects/spatula_Clean.png" id="8_ngs6l"]
+[ext_resource type="ArrayMesh" uid="uid://d1vnal5giv1xb" path="res://_Assets/Objects/spookjam_spatula_clean.obj" id="9_00sla"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swcym"]
+albedo_texture = ExtResource("2_5trsd")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qax8x"]
 cull_mode = 2
@@ -10,10 +20,20 @@ albedo_texture = ExtResource("1_vs0ia")
 texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jtq5t"]
-size = Vector3(1, 0.5, 2)
+size = Vector3(1, 0.5, 3)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_51fhe"]
 size = Vector3(0.4, 0.175488, 0.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l08iq"]
+transparency = 1
+albedo_texture = ExtResource("6_vsjvt")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dgkc3"]
+transparency = 1
+albedo_texture = ExtResource("8_ngs6l")
+texture_filter = 0
 
 [node name="stove" type="StaticBody3D"]
 collision_layer = 4
@@ -23,8 +43,8 @@ reticle_input = "interact"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
-material_override = SubResource("StandardMaterial3D_qax8x")
-mesh = ExtResource("1_r1tfd")
+material_override = SubResource("StandardMaterial3D_swcym")
+mesh = ExtResource("3_kv8ob")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 1)
@@ -39,17 +59,27 @@ material_override = SubResource("StandardMaterial3D_qax8x")
 mesh = ExtResource("1_r1tfd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
 shape = SubResource("BoxShape3D_jtq5t")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0.573576, -0.819152, 0, 0.819152, 0.573576, 1, 2.50718e-08, -3.58063e-08, -1.15, 1.2, 0)
 
 [node name="BurgerConstructor" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501478, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501478, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BurgerConstructor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0867676, 0)
 shape = SubResource("BoxShape3D_51fhe")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.187952, -0.0271278, 0.0627554, 0.0285707, 0.197949, 9.82619e-10, -0.0621118, 0.00896483, 0.189899, -0.27432, 0.477258, 1.32242)
+material_override = SubResource("StandardMaterial3D_l08iq")
+mesh = ExtResource("7_xdkmo")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.187774, -0.0271022, -0.0632954, 0.0285707, 0.197949, 2.84697e-09, 0.0626462, -0.00904197, 0.18972, -0.27432, 0.477258, -0.379063)
+material_override = SubResource("StandardMaterial3D_dgkc3")
+mesh = ExtResource("9_00sla")
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]

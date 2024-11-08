@@ -1,12 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://t6g25kc7neum"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_irn6q"]
-top_radius = 0.2
-bottom_radius = 0.2
-height = 0.1
+[gd_scene load_steps=2 format=3 uid="uid://t6g25kc7neum"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nf467"]
-size = Vector3(0.4, 0.1, 0.4)
+size = Vector3(0.25, 0.1, 0.25)
 
 [node name="BurgerTopBun" type="RigidBody3D" groups=["grabbable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
@@ -17,7 +12,6 @@ gravity_scale = 0.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0497748, 0)
-mesh = SubResource("CylinderMesh_irn6q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0515216, 0)
