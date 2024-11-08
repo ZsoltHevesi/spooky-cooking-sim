@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buvj54j4uti27"
+path="res://.godot/imported/burger_bottom_bun.obj-6c69ee1be249cfe3d51d3b534cc12a77.mesh"
+
+[deps]
+
+files=["res://.godot/imported/burger_bottom_bun.obj-6c69ee1be249cfe3d51d3b534cc12a77.mesh"]
+
+source_file="res://_Assets/ingredients/burger_bottom_bun.obj"
+dest_files=["res://.godot/imported/burger_bottom_bun.obj-6c69ee1be249cfe3d51d3b534cc12a77.mesh", "res://.godot/imported/burger_bottom_bun.obj-6c69ee1be249cfe3d51d3b534cc12a77.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

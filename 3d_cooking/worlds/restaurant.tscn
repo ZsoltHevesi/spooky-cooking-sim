@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlfrjnwd65y4m"]
+[gd_scene load_steps=19 format=3 uid="uid://dlfrjnwd65y4m"]
 
 [ext_resource type="PackedScene" uid="uid://i0wpxhmxkq6p" path="res://player/player.tscn" id="1_3xlh7"]
 [ext_resource type="PackedScene" uid="uid://dkvtpsehkkh4g" path="res://_Scenes/stove.tscn" id="5_emdev"]
@@ -6,6 +6,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bngvw3p5taqux" path="res://_Assets/Objects/spookjam_meat_pile_red.obj" id="6_2pidn"]
 [ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://_Scenes/burger_top_bun.tscn" id="6_8yb5e"]
 [ext_resource type="PackedScene" uid="uid://ds310i3gdkayf" path="res://customers/customer.tscn" id="6_xdh2k"]
+[ext_resource type="PackedScene" uid="uid://b4f3mvgyb58oq" path="res://_Scenes/burger_lettuce.tscn" id="7_lurd4"]
+[ext_resource type="PackedScene" uid="uid://dbd18sc4fngn5" path="res://_Scenes/burger_patty.tscn" id="8_2udx0"]
+[ext_resource type="PackedScene" uid="uid://bi1w5tbdlvonc" path="res://_Scenes/burger_bottom_bun.tscn" id="9_waj0w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_80w24"]
 sky_top_color = Color(4.33177e-06, 0.483109, 0.689181, 1)
@@ -77,3 +80,12 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="BurgerTopBun" parent="." instance=ExtResource("6_8yb5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.6, -4.3)
+
+[node name="BurgerTopBun2" parent="." instance=ExtResource("7_lurd4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996175, 0.6, -3.89192)
+
+[node name="BurgerTopBun3" parent="." instance=ExtResource("8_2udx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.720354, 0.6, -3.64908)
+
+[node name="BurgerTopBun4" parent="." instance=ExtResource("9_waj0w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.702357, 0.6, -3.98029)

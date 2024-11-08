@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbd18sc4fngn5"]
+
+[ext_resource type="ArrayMesh" uid="uid://btytu64lalfd2" path="res://_Assets/ingredients/burger_patty.obj" id="1_bq7y6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nf467"]
+size = Vector3(0.25, 0.1, 0.25)
+
+[node name="BurgerTopBun" type="RigidBody3D" groups=["grabbable"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+top_level = true
+collision_layer = 4
+collision_mask = 15
+gravity_scale = 0.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, -0.1, 0)
+mesh = ExtResource("1_bq7y6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0515216, 0)
+shape = SubResource("BoxShape3D_nf467")
