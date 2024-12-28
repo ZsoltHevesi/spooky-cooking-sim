@@ -2,10 +2,10 @@ extends Interactible
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var stove: StaticBody3D = $"."
 
-@onready var top_bun_spawn: MeshInstance3D = $top_bun_spawn
-@onready var bottom_bun_spawn: MeshInstance3D = $bottom_bun_spawn
-@onready var patty_spawn: MeshInstance3D = $patty_spawn
-@onready var lettuce_spawn: MeshInstance3D = $lettuce_spawn
+@onready var top_bun_spawn: Area3D = $top_bun_spawn
+@onready var bottom_bun_spawn: Area3D = $bottom_bun_spawn
+@onready var patty_spawn: Area3D = $patty_spawn
+@onready var lettuce_spawn: Area3D = $lettuce_spawn
 
 var is_in_use : bool = false
 
@@ -71,6 +71,32 @@ func _process(delta: float) -> void:
 	if grabbed_object and grabbed_object.is_in_group("grabbable"):
 		grabbed_object.position = get_grab_position()
 
+	#if grabbed_object and grabbed_object.is_in_group("spawns"):
+		#if grabbed_object.name == "top_bun_spawn":
+			#instance = top_bun.instantiate()
+			#instance.position = top_bun_spawn.global_position
+			#instance.transform.basis = top_bun_spawn.global_transform.basis
+			#add_child(instance)
+			#print("spawned 1")
+		#if grabbed_object.name == "bottom_bun_spawn":
+			#instance = bottom_bun.instantiate()
+			#instance.position = bottom_bun_spawn.global_position
+			#instance.transform.basis = bottom_bun_spawn.global_transform.basis
+			#add_child(instance)
+			#print("spawned 2")
+		#if grabbed_object.name == "patty_spawn":
+			#instance = patty.instantiate()
+			#instance.position = patty_spawn.global_position
+			#instance.transform.basis = patty_spawn.global_transform.basis
+			#add_child(instance)
+			#print("spawned 3")
+		#if grabbed_object.name == "lettuce_spawn":
+			#instance = lettuce.instantiate()
+			#instance.position = lettuce_spawn.global_position
+			#instance.transform.basis = lettuce_spawn.global_transform.basis
+			#add_child(instance)
+			#print("spawned 4")
+
 func get_grabbed_object(mouse: Vector2):
 	var space = get_world_3d().direct_space_state
 	var start = get_viewport().get_camera_3d().project_ray_origin(mouse)
@@ -80,6 +106,7 @@ func get_grabbed_object(mouse: Vector2):
 	params.to = end
 
 	var result = space.intersect_ray(params)
+	print(result)
 	
 	if result.is_empty() == false:
 		return result.collider

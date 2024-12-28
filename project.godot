@@ -27,6 +27,7 @@ project/assembly_name="Spooky Cooking Sim"
 [global_group]
 
 grabbable="can be grabbed"
+spawns="used for ingridient spawns for now"
 
 [input]
 
