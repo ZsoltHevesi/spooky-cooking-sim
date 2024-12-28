@@ -2,10 +2,10 @@ extends Interactible
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var stove: StaticBody3D = $"."
 
-@onready var top_bun_spawn: Marker3D = $top_bun_spawn
-@onready var bottom_bun_spawn: Marker3D = $bottom_bun_spawn
-@onready var patty_spawn: Marker3D = $patty_spawn
-@onready var lettuce_spawn: Marker3D = $lettuce_spawn
+@onready var top_bun_spawn: MeshInstance3D = $top_bun_spawn
+@onready var bottom_bun_spawn: MeshInstance3D = $bottom_bun_spawn
+@onready var patty_spawn: MeshInstance3D = $patty_spawn
+@onready var lettuce_spawn: MeshInstance3D = $lettuce_spawn
 
 var is_in_use : bool = false
 
