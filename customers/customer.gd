@@ -16,3 +16,4 @@ func _physics_process(delta: float) -> void:
 		get_node("../player").hud.get_node("reticle").visible = true
 		get_node("../player").hud.get_node("reticle_text").visible = true
 		get_node("../player").hud.get_node("dialog_margin").visible = false
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
