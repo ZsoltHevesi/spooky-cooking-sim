@@ -80,12 +80,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 
 [node name="BurgerTopBun" parent="." instance=ExtResource("6_8yb5e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 0.6, -4.3)
+collision_layer = 8
 
 [node name="BurgerTopBun2" parent="." instance=ExtResource("7_lurd4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.996175, 0.6, -3.89192)
+collision_layer = 8
 
 [node name="BurgerTopBun3" parent="." instance=ExtResource("8_2udx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.720354, 0.6, -3.64908)
+collision_layer = 8
 
 [node name="BurgerTopBun4" parent="." instance=ExtResource("9_waj0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.702357, 0.6, -3.98029)
+collision_layer = 8
