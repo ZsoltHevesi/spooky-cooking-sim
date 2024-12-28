@@ -21,18 +21,15 @@ func _input(event: InputEvent) -> void:
 		get_node("../player").set_physics_process(true)
 		set_physics_process(false)
 		is_in_use = false
-		print("STOPPED USING THE STOVE")
 	if event is InputEventMouseMotion:
 		mouse = event.position
 	if event is InputEventMouseButton:
 		# Mouse pressed
 		if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			grabbed_object = get_grabbed_object(mouse)
-			print("MOUSE PRESSED")
 		# Mouse released
 		elif not event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 			grabbed_object = null
-			print("MOUSE RELEASED")
 
 func _on_interacted(body: Variant) -> void:
 	if !is_in_use:
@@ -42,12 +39,10 @@ func _on_interacted(body: Variant) -> void:
 		get_node("../player").set_physics_process(false)
 		is_in_use = true
 		set_physics_process(true)
-		print("USING THE STOVE")
 
 func _process(delta: float) -> void:
 	if grabbed_object and grabbed_object.is_in_group("grabbable"):
 		grabbed_object.position = get_grab_position()
-		print("HOLDING GRABBABLE")
 
 func get_grabbed_object(mouse: Vector2):
 	var space = get_world_3d().direct_space_state
