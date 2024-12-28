@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_nf467"]
 size = Vector3(0.25, 0.1, 0.25)
 
-[node name="BurgerTopBun" type="RigidBody3D" groups=["grabbable"]]
+[node name="burger_lettuce" type="RigidBody3D" groups=["grabbable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 top_level = true
 collision_layer = 4

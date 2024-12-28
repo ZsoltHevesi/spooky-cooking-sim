@@ -82,4 +82,20 @@ transform = Transform3D(0.187774, -0.0271022, -0.0632954, 0.0285707, 0.197949, 2
 material_override = SubResource("StandardMaterial3D_dgkc3")
 mesh = ExtResource("9_00sla")
 
+[node name="top_bun_spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, -1.2)
+visible = false
+
+[node name="bottom_bun_spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, -0.8)
+visible = false
+
+[node name="patty_spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.5, -1.2)
+visible = false
+
+[node name="lettuce_spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.5, -0.8)
+visible = false
+
 [connection signal="interacted" from="." to="." method="_on_interacted"]

@@ -2,6 +2,11 @@ extends Interactible
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var stove: StaticBody3D = $"."
 
+@onready var top_bun_spawn: Marker3D = $top_bun_spawn
+@onready var bottom_bun_spawn: Marker3D = $bottom_bun_spawn
+@onready var patty_spawn: Marker3D = $patty_spawn
+@onready var lettuce_spawn: Marker3D = $lettuce_spawn
+
 var is_in_use : bool = false
 
 var grabbed_object = null
@@ -9,8 +14,30 @@ var mouse = Vector2()
 const DIST = 1000
 const FIXED_Y = 0.65
 
+var bottom_bun = load("res://_Scenes/burger_bottom_bun.tscn")
+var lettuce = load("res://_Scenes/burger_lettuce.tscn")
+var patty = load("res://_Scenes/burger_patty.tscn")
+var top_bun = load("res://_Scenes/burger_top_bun.tscn")
+
+var instance
 
 func _ready() -> void:
+	instance = top_bun.instantiate()
+	instance.position = top_bun_spawn.global_position
+	instance.transform.basis = top_bun_spawn.global_transform.basis
+	add_child(instance)
+	instance = bottom_bun.instantiate()
+	instance.position = bottom_bun_spawn.global_position
+	instance.transform.basis = bottom_bun_spawn.global_transform.basis
+	add_child(instance)
+	instance = patty.instantiate()
+	instance.position = patty_spawn.global_position
+	instance.transform.basis = patty_spawn.global_transform.basis
+	add_child(instance)
+	instance = lettuce.instantiate()
+	instance.position = lettuce_spawn.global_position
+	instance.transform.basis = lettuce_spawn.global_transform.basis
+	add_child(instance)
 	set_physics_process(false)
 
 func _input(event: InputEvent) -> void:
