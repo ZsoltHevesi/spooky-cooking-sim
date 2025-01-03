@@ -17,15 +17,17 @@ const FIXED_Y = 0.65
 var bottom_bun = load("res://_Scenes/burger_bottom_bun.tscn")
 var lettuce = load("res://_Scenes/burger_lettuce.tscn")
 var patty = load("res://_Scenes/burger_patty.tscn")
-var top_bun = load("res://_Scenes/burger_top_bun.tscn")
+#var top_bun = load("res://_Scenes/burger_top_bun.tscn")
 
 var instance
 
 func _ready() -> void:
-	instance = top_bun.instantiate()
-	instance.position = top_bun_spawn.global_position
-	instance.transform.basis = top_bun_spawn.global_transform.basis
-	add_child(instance)
+	#instance = top_bun.instantiate()
+	#instance.position = top_bun_spawn.global_position
+	#instance.transform.basis = top_bun_spawn.global_transform.basis
+	#add_child(instance)
+	top_bun_spawn.spawn_new()
+	top_bun_spawn.spawn_new()
 	instance = bottom_bun.instantiate()
 	instance.position = bottom_bun_spawn.global_position
 	instance.transform.basis = bottom_bun_spawn.global_transform.basis
@@ -106,7 +108,6 @@ func get_grabbed_object(mouse: Vector2):
 	params.to = end
 
 	var result = space.intersect_ray(params)
-	print(result)
 	
 	if result.is_empty() == false:
 		return result.collider

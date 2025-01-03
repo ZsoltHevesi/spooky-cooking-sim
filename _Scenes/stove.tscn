@@ -1,6 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkvtpsehkkh4g"]
+[gd_scene load_steps=26 format=3 uid="uid://dkvtpsehkkh4g"]
 
-[ext_resource type="Script" path="res://_Scenes/stove.gd" id="1_6tf2b"]
+[ext_resource type="Script" path="res://_Scripts/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 [ext_resource type="Texture2D" uid="uid://pnw6ihra53u1" path="res://_Assets/Objects/Spookjam_Grill_clean.png" id="1_vs0ia"]
 [ext_resource type="Texture2D" uid="uid://djqqovjck1ob3" path="res://_Assets/Objects/Spookjam_Grill_Dirty.png" id="2_5trsd"]
@@ -9,7 +9,9 @@
 [ext_resource type="ArrayMesh" uid="uid://ffyipym6ngmt" path="res://_Assets/Objects/spookjam_spatula_dirty.obj" id="7_xdkmo"]
 [ext_resource type="Texture2D" uid="uid://cmqhcg888v5h0" path="res://_Assets/Objects/spatula_Clean.png" id="8_ngs6l"]
 [ext_resource type="ArrayMesh" uid="uid://d1vnal5giv1xb" path="res://_Assets/Objects/spookjam_spatula_clean.obj" id="9_00sla"]
+[ext_resource type="Script" path="res://_Scenes/top_bun_spawn.gd" id="10_j044b"]
 [ext_resource type="ArrayMesh" uid="uid://bkd5umt6g8cvb" path="res://_Assets/ingredients/burger_top_bun.obj" id="10_v2vck"]
+[ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://_Scenes/burger_top_bun.tscn" id="11_43nga"]
 [ext_resource type="ArrayMesh" uid="uid://buvj54j4uti27" path="res://_Assets/ingredients/burger_bottom_bun.obj" id="11_iilu2"]
 [ext_resource type="ArrayMesh" uid="uid://ya6giyapa3nj" path="res://_Assets/ingredients/burger_lettuce.obj" id="12_3fghn"]
 [ext_resource type="ArrayMesh" uid="uid://btytu64lalfd2" path="res://_Assets/ingredients/burger_patty.obj" id="13_0fo8o"]
@@ -102,6 +104,8 @@ mesh = ExtResource("9_00sla")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, -1.2)
 collision_layer = 4
 collision_mask = 16
+script = ExtResource("10_j044b")
+entity = ExtResource("11_43nga")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="top_bun_spawn"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
