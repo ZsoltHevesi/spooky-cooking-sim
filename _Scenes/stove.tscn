@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dkvtpsehkkh4g"]
+[gd_scene load_steps=25 format=3 uid="uid://dkvtpsehkkh4g"]
 
 [ext_resource type="Script" path="res://_Scripts/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
@@ -9,9 +9,15 @@
 [ext_resource type="ArrayMesh" uid="uid://ffyipym6ngmt" path="res://_Assets/Objects/spookjam_spatula_dirty.obj" id="7_xdkmo"]
 [ext_resource type="Texture2D" uid="uid://cmqhcg888v5h0" path="res://_Assets/Objects/spatula_Clean.png" id="8_ngs6l"]
 [ext_resource type="ArrayMesh" uid="uid://d1vnal5giv1xb" path="res://_Assets/Objects/spookjam_spatula_clean.obj" id="9_00sla"]
-[ext_resource type="PackedScene" uid="uid://c4lq4scqtowpd" path="res://spawn.tscn" id="10_fs3e2"]
+[ext_resource type="PackedScene" uid="uid://c4lq4scqtowpd" path="res://_Scenes/spawn.tscn" id="10_fs3e2"]
 [ext_resource type="ArrayMesh" uid="uid://bkd5umt6g8cvb" path="res://_Assets/ingredients/burger_top_bun.obj" id="10_v2vck"]
 [ext_resource type="PackedScene" uid="uid://t6g25kc7neum" path="res://_Scenes/burger_top_bun.tscn" id="11_43nga"]
+[ext_resource type="PackedScene" uid="uid://bi1w5tbdlvonc" path="res://_Scenes/burger_bottom_bun.tscn" id="13_pjsr7"]
+[ext_resource type="ArrayMesh" uid="uid://buvj54j4uti27" path="res://_Assets/ingredients/burger_bottom_bun.obj" id="14_0r2c0"]
+[ext_resource type="PackedScene" uid="uid://dbd18sc4fngn5" path="res://_Scenes/burger_patty.tscn" id="15_s4724"]
+[ext_resource type="ArrayMesh" uid="uid://btytu64lalfd2" path="res://_Assets/ingredients/burger_patty.obj" id="16_f2hw8"]
+[ext_resource type="PackedScene" uid="uid://b4f3mvgyb58oq" path="res://_Scenes/burger_lettuce.tscn" id="17_fihpr"]
+[ext_resource type="ArrayMesh" uid="uid://ya6giyapa3nj" path="res://_Assets/ingredients/burger_lettuce.obj" id="18_3qoi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_swcym"]
 albedo_texture = ExtResource("2_5trsd")
@@ -85,10 +91,28 @@ transform = Transform3D(0.187774, -0.0271022, -0.0632954, 0.0285707, 0.197949, 2
 material_override = SubResource("StandardMaterial3D_dgkc3")
 mesh = ExtResource("9_00sla")
 
-[node name="spawn" parent="." instance=ExtResource("10_fs3e2")]
+[node name="top_bun_spawn" parent="." instance=ExtResource("10_fs3e2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, -1.2)
 entity = ExtResource("11_43nga")
 spawn_mesh = ExtResource("10_v2vck")
+mesh_scale = Vector3(0.25, 0.25, 0.25)
+
+[node name="bottom_bun_spawn" parent="." instance=ExtResource("10_fs3e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.5, -0.8)
+entity = ExtResource("13_pjsr7")
+spawn_mesh = ExtResource("14_0r2c0")
+mesh_scale = Vector3(0.25, 0.25, 0.25)
+
+[node name="patty_spawn" parent="." instance=ExtResource("10_fs3e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.5, -1.2)
+entity = ExtResource("15_s4724")
+spawn_mesh = ExtResource("16_f2hw8")
+mesh_scale = Vector3(0.25, 0.25, 0.25)
+
+[node name="lettuce_spawn" parent="." instance=ExtResource("10_fs3e2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.5, -0.8)
+entity = ExtResource("17_fihpr")
+spawn_mesh = ExtResource("18_3qoi4")
 mesh_scale = Vector3(0.25, 0.25, 0.25)
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]

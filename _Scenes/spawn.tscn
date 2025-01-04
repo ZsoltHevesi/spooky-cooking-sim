@@ -1,11 +1,11 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4lq4scqtowpd"]
 
-[ext_resource type="Script" path="res://_Scripts/spawn.gd" id="1_rjs3j"]
+[ext_resource type="Script" path="res://_Scripts/spawn.gd" id="1_hkep5"]
 
 [node name="spawn" type="Area3D" groups=["spawns"]]
 collision_layer = 32
 collision_mask = 32
-script = ExtResource("1_rjs3j")
+script = ExtResource("1_hkep5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 

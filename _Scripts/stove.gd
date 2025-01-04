@@ -1,7 +1,10 @@
 extends Interactible
 @onready var camera_3d: Camera3D = $Camera3D
 @onready var stove: StaticBody3D = $"."
-@onready var spawn: Spawner = $spawn
+@onready var top_bun_spawn: Spawner = $top_bun_spawn
+@onready var bottom_bun_spawn: Spawner = $bottom_bun_spawn
+@onready var patty_spawn: Spawner = $patty_spawn
+@onready var lettuce_spawn: Spawner = $lettuce_spawn
 
 var is_in_use : bool = false
 
@@ -13,7 +16,10 @@ const FIXED_Y = 0.65
 var instance
 
 func _ready() -> void:
-	spawn.spawn_new()
+	top_bun_spawn.spawn_new()
+	bottom_bun_spawn.spawn_new()
+	patty_spawn.spawn_new()
+	lettuce_spawn.spawn_new()
 	set_physics_process(false)
 
 func _input(event: InputEvent) -> void:
