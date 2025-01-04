@@ -79,6 +79,7 @@ RMB={
 3d_physics/layer_3="interactibles"
 3d_physics/layer_4="npc"
 3d_physics/layer_5="ingredients"
+3d_physics/layer_6="spawns"
 
 [rendering]
 

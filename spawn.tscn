@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://_Scripts/spawn.gd" id="1_rjs3j"]
 
 [node name="spawn" type="Area3D" groups=["spawns"]]
-collision_layer = 16
-collision_mask = 0
+collision_layer = 32
+collision_mask = 32
 script = ExtResource("1_rjs3j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

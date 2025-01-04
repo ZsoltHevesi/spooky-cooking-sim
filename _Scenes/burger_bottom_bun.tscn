@@ -8,7 +8,7 @@ size = Vector3(0.25, 0.1, 0.25)
 [node name="burger_bottom_bun" type="RigidBody3D" groups=["grabbable"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 top_level = true
-collision_layer = 4
+collision_layer = 16
 collision_mask = 15
 gravity_scale = 0.0
 
