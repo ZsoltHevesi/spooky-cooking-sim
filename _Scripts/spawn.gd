@@ -15,7 +15,6 @@ func _ready() -> void:
 	spawn_mesh_3d.scale = mesh_scale
 	if spawn_mesh != null:
 		spawn_mesh_3d.mesh = spawn_mesh
-		spawn_mesh_3d.create_trimesh_collision()
 		spawn_collision_3d.make_convex_from_siblings()
 
 func spawn_new() -> void:
