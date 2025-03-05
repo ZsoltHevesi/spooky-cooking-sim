@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c114jo5authca"]
 
-[ext_resource type="Script" path="res://2d_cooking/slot.gd" id="1_rmauu"]
+[ext_resource type="Script" uid="uid://dbedpnae1g6cc" path="res://2d_cooking/slot.gd" id="1_rmauu"]
 
 [node name="slot" type="PanelContainer"]
 script = ExtResource("1_rmauu")

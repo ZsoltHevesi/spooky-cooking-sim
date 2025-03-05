@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c4lq4scqtowpd"]
 
-[ext_resource type="Script" path="res://_Scripts/spawn.gd" id="1_hkep5"]
+[ext_resource type="Script" uid="uid://df11nemeg01ar" path="res://_Scripts/spawn.gd" id="1_hkep5"]
 
 [node name="spawn" type="Area3D" groups=["spawns"]]
 collision_layer = 32

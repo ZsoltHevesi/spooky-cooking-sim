@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://dkvtpsehkkh4g"]
 
-[ext_resource type="Script" path="res://_Scripts/stove.gd" id="1_6tf2b"]
+[ext_resource type="Script" uid="uid://cunx6s8ntsk5x" path="res://_Scripts/stove.gd" id="1_6tf2b"]
 [ext_resource type="ArrayMesh" uid="uid://bins0jj5w5ep6" path="res://_Assets/Objects/Spookjam_Grill_Clean.obj" id="1_r1tfd"]
 [ext_resource type="Texture2D" uid="uid://pnw6ihra53u1" path="res://_Assets/Objects/Spookjam_Grill_clean.png" id="1_vs0ia"]
 [ext_resource type="Texture2D" uid="uid://djqqovjck1ob3" path="res://_Assets/Objects/Spookjam_Grill_Dirty.png" id="2_5trsd"]

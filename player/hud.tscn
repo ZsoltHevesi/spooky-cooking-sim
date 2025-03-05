@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c3xs4nkbjqfux"]
 
-[ext_resource type="Script" path="res://player/reticle.gd" id="1_hncki"]
-[ext_resource type="Script" path="res://player/hud.gd" id="1_jd1kf"]
+[ext_resource type="Script" uid="uid://ctmb4k6f1er6s" path="res://player/reticle.gd" id="1_hncki"]
+[ext_resource type="Script" uid="uid://daamij4slk7ji" path="res://player/hud.gd" id="1_jd1kf"]
 
 [node name="HUD" type="Control"]
 layout_mode = 3

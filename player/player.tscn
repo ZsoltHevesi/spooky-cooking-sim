@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://i0wpxhmxkq6p"]
 
-[ext_resource type="Script" path="res://player/player.gd" id="1_xr0jd"]
+[ext_resource type="Script" uid="uid://coc8watulag2g" path="res://player/player.gd" id="1_xr0jd"]
 [ext_resource type="PackedScene" uid="uid://c3xs4nkbjqfux" path="res://player/hud.tscn" id="2_p0r0y"]
-[ext_resource type="Script" path="res://player/interaction_raycast.gd" id="3_tkynn"]
+[ext_resource type="Script" uid="uid://dl7c5i4ltwwsl" path="res://player/interaction_raycast.gd" id="3_tkynn"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nplg1"]
 radius = 0.3

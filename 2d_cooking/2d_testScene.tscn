@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d816lp5gbct8"]
 
-[ext_resource type="Script" path="res://2d_cooking/ui.gd" id="1_dhqwp"]
+[ext_resource type="Script" uid="uid://bnmf2vx5cw2ox" path="res://2d_cooking/ui.gd" id="1_dhqwp"]
 [ext_resource type="PackedScene" uid="uid://c114jo5authca" path="res://2d_cooking/slot.tscn" id="2_m83rc"]
 
 [node name="TestScene" type="Node2D"]

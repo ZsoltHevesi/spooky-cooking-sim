@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://dlfrjnwd65y4m"]
 
 [ext_resource type="PackedScene" uid="uid://i0wpxhmxkq6p" path="res://player/player.tscn" id="1_3xlh7"]
-[ext_resource type="Script" path="res://3d_cooking/worlds/restaurant.gd" id="1_f603d"]
+[ext_resource type="Script" uid="uid://qf8pnrdk78m8" path="res://3d_cooking/worlds/restaurant.gd" id="1_f603d"]
 [ext_resource type="PackedScene" uid="uid://dkvtpsehkkh4g" path="res://_Scenes/stove.tscn" id="5_emdev"]
 [ext_resource type="PackedScene" uid="uid://c4lq4scqtowpd" path="res://_Scenes/spawn.tscn" id="5_hdo06"]
 [ext_resource type="Texture2D" uid="uid://da1ialtmpd7ys" path="res://_Assets/Objects/spookjam_meat_red.png" id="5_tu4q5"]
